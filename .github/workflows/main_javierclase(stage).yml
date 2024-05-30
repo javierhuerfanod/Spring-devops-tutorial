@@ -46,12 +46,7 @@ jobs:
         with:
           name: java-app
       
-      - name: Login to Azure
-        uses: azure/login@v1
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_A867D82F40D346B89E01C8C679E83678 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_5E85522002D441E798E44E4E6055A23F }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A4E9BAC2E7944147BEFF948F46CF3E6F }}
+      
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -60,4 +55,5 @@ jobs:
           app-name: 'javierclase'
           slot-name: 'stage'
           package: '*.jar'
+          publish-profile: ${{ secrets.APPSERVICE_PROFILE }}
           

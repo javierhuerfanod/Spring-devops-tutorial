@@ -53,7 +53,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'ejemplospringboot'
-          slot-name: 'stage'
+          slot-name: 'release'
           package: '*.jar'
           publish-profile: ${{ secrets.APPSERVICE_PROFILE }}
           

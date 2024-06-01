@@ -52,7 +52,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'javierclase'
+          app-name: 'ejemplospringboot'
           slot-name: 'stage'
           package: '*.jar'
           publish-profile: ${{ secrets.APPSERVICE_PROFILE }}
